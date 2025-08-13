@@ -1,26 +1,33 @@
 #include "quadro.h"
 
-int DeterminaOcupado(Espaco Coordenada){
-    if(Coordenada.Local == " "){
-        return 0;
-    } else {
-        return 1;
+void LimpaQuadro(char** Quadro, int linhas, int colunas){
+    for(int i = 0; i < linhas; i++){
+        for(int j = 0; j < colunas; j++){
+            Quadro[i][j] = ' ';
+        }
     }
 }
 
-void Escreve(Espaco* Coordenada){
-    Coordenada->Local = '*';
+void EscreveAsterisco(char** Quadro, Coordenadas Cord){
+    Quadro[Cord.Linha][Cord.Coluna] = '*';
 }
 
-Coordenadas GeraCoordenada(Espaco** Quadro){
-    Coordenadas Cord;
-    int i = (rand() % 21);
-    int j = (rand() % 81);
-    if(!DeterminaOcupado(Quadro[i][j])){
-        GeraCoordenada(Quadro);
+void EscreveX(char** Quadro, Coordenadas Cord){
+    for(int i = -1; i < 2; i++){
+        for(int j = -1; j < 2; j++){
+            if(i == j || j == i *(-1)){
+                Quadro[Cord.Linha + i][Cord.Coluna + j] = '*';
+            }
+        }
     }
-    Cord.Linha = i;
-    Cord.Coluna = j;
+}
 
-    return Cord;
+void EscreveSoma(char** Quadro, Coordenadas Cord){
+    for(int i = -1; i < 2; i++){
+        for(int j = -1; j < 2; j++){
+            if(j == 0 || i == 0){
+                Quadro[Cord.Linha + i][Cord.Coluna + j] = '*';
+            }
+        }
+    }
 }

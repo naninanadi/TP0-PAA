@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "impressao.h": "c",
+        "tratamento.h": "c",
+        "quadro.h": "c"
+    }
+}

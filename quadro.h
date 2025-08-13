@@ -1,18 +1,15 @@
 #include <time.h>
 #include <stdlib.h>
 
-typedef struct Espaco{
-    char Local;
-    int Ocupado;
-} Espaco;
 
 typedef struct Coordenadas{
     int Linha;
     int Coluna;
 } Coordenadas;
 
-int DeterminaOcupado(Espaco Coordenada);
+void LimpaQuadro(char** Quadro, int linhas, int colunas);
 
-void Escreve(Espaco* Coordenada);
 
-int GeraCoordenada(Espaco** Quadro);
+void EscreveAsterisco(char** Quadro, Coordenadas Cord);
+void EscreveX(char** Quadro, Coordenadas Cord);
+void EscreveSoma(char** Quadro, Coordenadas Cord);

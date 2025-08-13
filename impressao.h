@@ -1,4 +1,6 @@
 #include <stdio.h>
-#include  "quadro.h"
+#include  "tratamento.h"
 
-void ImprimeQuadro(Espaco** Quadro);
+void ImprimeQuadro(char** Quadro);
+
+void ImprimeMatriz(char** Matriz, int linhas, int colunas);
