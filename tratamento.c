@@ -1,4 +1,5 @@
 #include "tratamento.h"
+#include <stdio.h>
 
 int DeterminaOcupadoAsterisco(char Coordenada){
     if(Coordenada == ' '){
@@ -46,14 +47,21 @@ int DeterminaOcupadoSoma(char** Quadro, Coordenadas Cord){
 
 Coordenadas GeraCoordenadaAseterisco(char** Quadro){
     Coordenadas Cord;
+
     int i = (rand() % 19);
     int j = (rand() % 79);
-    if(DeterminaOcupadoAsterisco(Quadro[i][j])){
-        GeraCoordenadaAseterisco(Quadro);
+
+    // printf("tudo certo aqui1\n");
+
+    while(DeterminaOcupadoAsterisco(Quadro[i][j])){
+        int i = (rand() % 19);
+        int j = (rand() % 79);
     }
+
+    // printf("tudo certo aqui\n");
+
     Cord.Linha = i;
     Cord.Coluna = j;
-    
 
     return Cord;
 }
@@ -67,8 +75,12 @@ Coordenadas GeraCoordenadaX(char** Quadro){
     Cord.Linha = i;
     Cord.Coluna = j;
 
-    if(DeterminaOcupadoX(Quadro, Cord)){
-        GeraCoordenadaX(Quadro);
+    while(DeterminaOcupadoX(Quadro, Cord)){
+        int i = (rand() % 17 + 1);
+        int j = (rand() % 77 + 1);
+
+        Cord.Linha = i;
+        Cord.Coluna = j;
     }
 
     return Cord;
@@ -83,8 +95,12 @@ Coordenadas GeraCoordenadaSoma(char** Quadro){
     Cord.Linha = i;
     Cord.Coluna = j;    
 
-    if(DeterminaOcupadoSoma(Quadro, Cord)){
-        GeraCoordenadaSoma(Quadro);
+    while(DeterminaOcupadoSoma(Quadro, Cord)){
+        int i = (rand() % 17 + 1);
+        int j = (rand() % 77 + 1);
+
+        Cord.Linha = i;
+        Cord.Coluna = j; 
     }
     
 
