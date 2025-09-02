@@ -16,7 +16,8 @@ void decisao(){
         menuprogramadearte(Quadro);
         break;
     case 2:
-        printf("n tem ainda :(\n");
+        Testanto();
+        // printf("n tem ainda :(\n");
         break;
     case 3:
         break;
