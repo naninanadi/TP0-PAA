@@ -5,11 +5,11 @@
 
 void decisao();
 
-void menuprogramadearte(char** Quadro);
+void menuprogramadearte(char Quadro[18][78]);
 
 char** criaquadro();
 
-void escolha1arte(char** Quadro, int Figuras, int Quatro);
-void escolha2arte(char** Quadro, int Figuras, int Quatro);
-void escolha3arte(char** Quadro, int Figuras, int Quatro);
-void escolha4arte(char** Quadro, int quanta, int quantsoma, int quantx);
+void escolha1arte(char Quadro[18][78], int Figuras, int Quatro);
+void escolha2arte(char Quadro[18][78], int Figuras, int Quatro);
+void escolha3arte(char Quadro[18][78], int Figuras, int Quatro);
+void escolha4arte(char Quadro[18][78], int quanta, int quantsoma, int quantx);

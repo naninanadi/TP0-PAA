@@ -2,7 +2,7 @@
 
 void decisao(){
 
-    char** Quadro = criaquadro();
+    char Quadro[18][78];
     LimpaQuadro(Quadro, numlinhas, numcolunas);
 
     int a;
@@ -27,7 +27,7 @@ void decisao(){
     }
 }
 
-void menuprogramadearte(char** Quadro){
+void menuprogramadearte(char Quadro[18][78]){
     int escolha;
 
     printf("================================================================================\n");
@@ -72,15 +72,8 @@ void menuprogramadearte(char** Quadro){
     }
 }
 
-char** criaquadro(){
-    char** quadro = malloc(numlinhas * sizeof(char*));
-    for (int i = 0; i < numlinhas; i++)
-        quadro[i] = malloc(numcolunas * sizeof(char));
 
-    return quadro;
-}
-
-void escolha1arte(char** Quadro, int Figuras, int Quatro){
+void escolha1arte(char Quadro[18][78], int Figuras, int Quatro){
     Coordenadas Cord;
     for(int i = 0; i < Figuras; i++){
         Cord = GeraCoordenadaAseterisco(Quadro);
@@ -113,7 +106,7 @@ void escolha1arte(char** Quadro, int Figuras, int Quatro){
     }
 }
 
-void escolha2arte(char** Quadro, int Figuras, int Quatro){
+void escolha2arte(char Quadro[18][78], int Figuras, int Quatro){
     Coordenadas Cord;
     for(int i = 0; i < Figuras; i++){
         Cord = GeraCoordenadaSoma(Quadro);
@@ -146,7 +139,7 @@ void escolha2arte(char** Quadro, int Figuras, int Quatro){
     }
 }
 
-void escolha3arte(char** Quadro, int Figuras, int Quatro){
+void escolha3arte(char Quadro[18][78], int Figuras, int Quatro){
     Coordenadas Cord;
     for(int i = 0; i < Figuras; i++){
         Cord = GeraCoordenadaX(Quadro);
@@ -179,7 +172,7 @@ void escolha3arte(char** Quadro, int Figuras, int Quatro){
     }
 }
 
-void escolha4arte(char** Quadro, int quanta, int quantsoma, int quantx){
+void escolha4arte(char Quadro[18][78], int quanta, int quantsoma, int quantx){
 
     // printf("oi amigos\n");
     escolha1arte(Quadro, quanta, 1);

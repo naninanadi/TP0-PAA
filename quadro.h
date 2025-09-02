@@ -7,9 +7,9 @@ typedef struct Coordenadas{
     int Coluna;
 } Coordenadas;
 
-void LimpaQuadro(char** Quadro, int linhas, int colunas);
+void LimpaQuadro(char Quadro[18][78], int linhas, int colunas);
 
 
-void EscreveAsterisco(char** Quadro, Coordenadas Cord);
-void EscreveX(char** Quadro, Coordenadas Cord);
-void EscreveSoma(char** Quadro, Coordenadas Cord);
+void EscreveAsterisco(char Quadro[18][78], Coordenadas Cord);
+void EscreveX(char Quadro[18][78], Coordenadas Cord);
+void EscreveSoma(char Quadro[18][78], Coordenadas Cord);

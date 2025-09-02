@@ -9,7 +9,7 @@ int DeterminaOcupadoAsterisco(char Coordenada){
     }
 }
 
-int DeterminaOcupadoX(char** Quadro, Coordenadas Cord){
+int DeterminaOcupadoX(char Quadro[18][78], Coordenadas Cord){
     int Verifica = 0;
     for(int i = -1; i < 2; i++){
         if(Verifica){
@@ -27,7 +27,7 @@ int DeterminaOcupadoX(char** Quadro, Coordenadas Cord){
     return Verifica;
 }
 
-int DeterminaOcupadoSoma(char** Quadro, Coordenadas Cord){
+int DeterminaOcupadoSoma(char Quadro[18][78], Coordenadas Cord){
     int Verifica = 0;
     for(int i = -1; i < 2; i++){
         if(Verifica){
@@ -45,20 +45,18 @@ int DeterminaOcupadoSoma(char** Quadro, Coordenadas Cord){
     return Verifica;
 }
 
-Coordenadas GeraCoordenadaAseterisco(char** Quadro){
+Coordenadas GeraCoordenadaAseterisco(char Quadro[18][78]){
     Coordenadas Cord;
 
     int i = (rand() % 19);
     int j = (rand() % 79);
 
-    // printf("tudo certo aqui1\n");
-
     while(DeterminaOcupadoAsterisco(Quadro[i][j])){
-        int i = (rand() % 19);
-        int j = (rand() % 79);
-    }
+        i = (rand() % 19);
+        j = (rand() % 79);
 
-    // printf("tudo certo aqui\n");
+        // printf("i=%d j=%d\n", i, j);
+    }
 
     Cord.Linha = i;
     Cord.Coluna = j;
@@ -66,7 +64,7 @@ Coordenadas GeraCoordenadaAseterisco(char** Quadro){
     return Cord;
 }
 
-Coordenadas GeraCoordenadaX(char** Quadro){
+Coordenadas GeraCoordenadaX(char Quadro[18][78]){
     Coordenadas Cord;
 
     int i = (rand() % 17 + 1);
@@ -76,17 +74,19 @@ Coordenadas GeraCoordenadaX(char** Quadro){
     Cord.Coluna = j;
 
     while(DeterminaOcupadoX(Quadro, Cord)){
-        int i = (rand() % 17 + 1);
-        int j = (rand() % 77 + 1);
+        i = (rand() % 17 + 1);
+        j = (rand() % 77 + 1);
 
         Cord.Linha = i;
         Cord.Coluna = j;
+
+        // printf("ta infinito X\n");
     }
 
     return Cord;
 }
 
-Coordenadas GeraCoordenadaSoma(char** Quadro){
+Coordenadas GeraCoordenadaSoma(char Quadro[18][78]){
     Coordenadas Cord;
 
     int i = (rand() % 17 + 1);
@@ -96,11 +96,13 @@ Coordenadas GeraCoordenadaSoma(char** Quadro){
     Cord.Coluna = j;    
 
     while(DeterminaOcupadoSoma(Quadro, Cord)){
-        int i = (rand() % 17 + 1);
-        int j = (rand() % 77 + 1);
+        i = (rand() % 17 + 1);
+        j = (rand() % 77 + 1);
 
         Cord.Linha = i;
         Cord.Coluna = j; 
+
+        // printf("ta infinito +\n");
     }
     
 

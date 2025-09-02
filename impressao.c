@@ -1,6 +1,6 @@
 #include "impressao.h"
 
-void ImprimeQuadro(char** Quadro){
+void ImprimeQuadro(char Quadro[18][78]){
     for(int i = 0; i < 20; i++){
         for(int j = 0; j < 80; j++){
             if(i == 0 || i == 19){
@@ -15,7 +15,7 @@ void ImprimeQuadro(char** Quadro){
     }
 }
 
-void ImprimeMatriz(char** Matriz, int linhas, int colunas){
+void ImprimeMatriz(char Matriz[18][78], int linhas, int colunas){
      for(int i = 0; i < linhas; i++){
         for(int j = 0; j < colunas; j++){
             printf("%c", Matriz[i][j]);   
