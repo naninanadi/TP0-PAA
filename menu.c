@@ -37,6 +37,12 @@ void menuprogramadearte(char Quadro[18][78]){
     printf("Quantas figuras gostaria de utilizar? (1 - 100)\n");
     int figuras; scanf("%d", &figuras);
 
+    if(figuras > 100){
+        figuras = 100;
+    } else if(figuras < 1){
+        figuras = 1;
+    }
+
     printf("Qual tipo de figura gostaria de usar na obra de arte?\n1 - Asterisco Simples\n2 - Simbolo de soma\n3 - Letra X\n4 - Todas as opcoes\n5 - Voltar ao menu\n");
     scanf("%d", &escolha); 
 
@@ -57,7 +63,6 @@ void menuprogramadearte(char Quadro[18][78]){
             break;
         case 4:
             quanta = 1 + rand() % figuras;
-            printf("figuras=%d quanta=%d\n", figuras, quanta);
             quantsoma = 1 + rand() % (figuras - quanta + 1);
             quantx = 1 + rand() % (figuras - quanta - quantsoma + 1);
 

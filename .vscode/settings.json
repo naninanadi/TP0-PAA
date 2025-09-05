@@ -3,6 +3,8 @@
         "stdio.h": "c",
         "impressao.h": "c",
         "tratamento.h": "c",
-        "quadro.h": "c"
+        "quadro.h": "c",
+        "menu.h": "c",
+        "batalhanaval.h": "c"
     }
 }
