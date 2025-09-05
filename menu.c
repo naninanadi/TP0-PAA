@@ -7,7 +7,7 @@ void decisao(){
 
     int a;
     printf("================================================================================\n");
-    printf("MENU\n");
+    printf("                                      MENU                                      \n");
     printf("================================================================================\n");
     printf("O que gostaria de fazer?\n1 - ENTRAR NO PROGRAMA GERADOR DE OBRAS DE ARTE COM ASTERISCO\n2 - JOGAR BATALHA NAVAL\n3 - SAIR\n");
     scanf("%d", &a);
@@ -16,8 +16,9 @@ void decisao(){
         menuprogramadearte(Quadro);
         break;
     case 2:
-        Testanto();
-        // printf("n tem ainda :(\n");
+        if(Jogo()){
+            decisao();
+        }
         break;
     case 3:
         break;
@@ -39,8 +40,8 @@ void menuprogramadearte(char Quadro[18][78]){
 
     if(figuras > 100){
         figuras = 100;
-    } else if(figuras < 1){
-        figuras = 1;
+    } else if(figuras <= 0){
+        figuras = rand() % 101;
     }
 
     printf("Qual tipo de figura gostaria de usar na obra de arte?\n1 - Asterisco Simples\n2 - Simbolo de soma\n3 - Letra X\n4 - Todas as opcoes\n5 - Voltar ao menu\n");

@@ -1,16 +1,9 @@
 #include <stdio.h>
-#include "impressao.h"
+#include "tratamento.h"
 #define linhas  18
 #define colunas 78
 
-typedef enum  TipoBarco{
-        Tipo1,
-        Tipo2,
-        Tipo3
-    } TipoBarco;
-
 typedef struct Barcos{
-    TipoBarco Tipo;
     char PosicaoIndividual;
     int Id;
 } Barcos;
@@ -18,8 +11,10 @@ typedef struct Barcos{
 Barcos MapaAuxiliar[18][78];
 
 int VerificaAcerto(Barcos Mapa[18][78], Coordenadas Cord);
+int Ataca(Barcos Mapa[18][78], Coordenadas Cord);
 
 void LimpaMapa(Barcos Mapa[18][78]);
+void ImprimeMapa(Barcos Mapa[18][78]);
 
 int DeterminaOcupadoBarquinho1(Barcos Mapa[18][78], Coordenadas Cord);
 int DeterminaOcupadoBarquinho2(Barcos Mapa[18][78], Coordenadas Cord);
@@ -42,5 +37,9 @@ void AtribuiId1(Barcos Mapa[18][78], Coordenadas Cord, int Id);
 void AtribuiId2(Barcos Mapa[18][78], Coordenadas Cord, int Id);
 void AtribuiId3(Barcos Mapa[18][78], Coordenadas Cord, int Id);
 
+void IniciaoJogo();
+void LimpaMapaInicio(Barcos Mapa[6][78]);
+void EscreveBarquinhoInicio(Barcos Mapa[6][78], Coordenadas Cord);
+void ImprimeMapaInicio(Barcos Mapa[6][78]);
 
-void Testanto();
+int Jogo();

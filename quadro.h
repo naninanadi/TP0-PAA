@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 
 typedef struct Coordenadas{
@@ -13,3 +14,5 @@ void LimpaQuadro(char Quadro[18][78], int linhas, int colunas);
 void EscreveAsterisco(char Quadro[18][78], Coordenadas Cord);
 void EscreveX(char Quadro[18][78], Coordenadas Cord);
 void EscreveSoma(char Quadro[18][78], Coordenadas Cord);
+
+void ImprimeQuadro(char Quadro[18][78]);
