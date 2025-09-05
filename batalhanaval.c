@@ -233,7 +233,7 @@ void Testanto(){
     PosicionaBarquinho2(Mapa, QuantB2, QuantB1);
     PosicionaBarquinho3(Mapa, QuantB3, QuantB1 + QuantB2);
 
-    // ImprimeMapa(Mapa);
+    ImprimeMapa(Mapa);
 
     while(1){
         int linha, coluna;
