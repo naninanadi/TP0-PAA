@@ -1,15 +1,6 @@
 #include "batalhanaval.h"
 
-int VerificaMapaCheio(Barcos Mapa[18][78]){
-    for(int i = 0; i < linhas; i++){
-        for(int j = 0; j < colunas; j++){
-            if(Mapa[i][j].PosicaoIndividual != ' '){
-                return 0;
-            }
-        }
-    }
-    return 1;
-}
+Barcos MapaAuxiliar[18][78];
 
 int VerificaAcerto(Barcos Mapa[18][78], Coordenadas Cord){
     if(Mapa[Cord.Linha][Cord.Coluna].PosicaoIndividual != ' '){
@@ -205,11 +196,12 @@ void ImprimeMapa(Barcos Mapa[18][78]){
 }
 
 void GeraQuantidade(int QuantidadeTotal, int *QuantB1, int *QuantB2, int *QuantB3){
-    *QuantB1 = 1 + rand() % QuantidadeTotal;
-    *QuantB2 = 1 + rand() % (QuantidadeTotal - *QuantB1);
-    *QuantB3 = 1 + rand() % (QuantidadeTotal - *QuantB1 - *QuantB2);
-
+    if(QuantidadeTotal < 3) QuantidadeTotal = 3;  
+    *QuantB1 = 1 + rand() % (QuantidadeTotal - 2);          
+    *QuantB2 = 1 + rand() % (QuantidadeTotal - *QuantB1 - 1);
+    *QuantB3 = QuantidadeTotal - *QuantB1 - *QuantB2;      
 }
+
 
 int Ataca(Barcos Mapa[18][78], Coordenadas Cord){
     if(VerificaAcerto(Mapa, Cord)){
@@ -329,8 +321,6 @@ int Jogo(){
     PosicionaBarquinho1(Mapa, QuantB1);
     PosicionaBarquinho2(Mapa, QuantB2, QuantB1);
     PosicionaBarquinho3(Mapa, QuantB3, QuantB1 + QuantB2);
-
-    ImprimeMapa(Mapa);
 
     while(1){
         int linha, coluna;

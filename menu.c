@@ -87,7 +87,6 @@ void escolha1arte(char Quadro[18][78], int Figuras, int Quatro){
         EscreveAsterisco(Quadro, Cord);
     }
 
-    
 
     if(!Quatro){
 
@@ -181,13 +180,9 @@ void escolha3arte(char Quadro[18][78], int Figuras, int Quatro){
 
 void escolha4arte(char Quadro[18][78], int quanta, int quantsoma, int quantx){
 
-    // printf("oi amigos\n");
     escolha1arte(Quadro, quanta, 1);
-    // printf("a\n");
     escolha2arte(Quadro, quantsoma, 1);
-    // printf("aaa\n");
     escolha3arte(Quadro, quantx, 1);
-    // printf("vem aqui\n");
 
 
     ImprimeQuadro(Quadro);

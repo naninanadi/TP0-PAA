@@ -8,7 +8,6 @@ typedef struct Barcos{
     int Id;
 } Barcos;
 
-Barcos MapaAuxiliar[18][78];
 
 int VerificaAcerto(Barcos Mapa[18][78], Coordenadas Cord);
 int Ataca(Barcos Mapa[18][78], Coordenadas Cord);
@@ -31,7 +30,6 @@ void EscreveBarquinho3(Barcos Mapa[18][78], Coordenadas Cord, int Id);
 void PosicionaBarquinho1(Barcos Mapa[18][78], int Quantidade);
 void PosicionaBarquinho2(Barcos Mapa[18][78], int Quantidade, int InicioId);
 void PosicionaBarquinho3(Barcos Mapa[18][78], int Quantidade, int InicioId);
-
 
 void AtribuiId1(Barcos Mapa[18][78], Coordenadas Cord, int Id);
 void AtribuiId2(Barcos Mapa[18][78], Coordenadas Cord, int Id);
